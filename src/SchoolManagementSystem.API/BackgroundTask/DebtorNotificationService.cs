@@ -1,4 +1,4 @@
-using SchoolManagementSystem.Application.Services_Implementations;
+using SchoolManagementSystem.Application.BusinessLogic.Services_Implementations;
 using SchoolManagementSystem.Domain.Services;
 using SchoolManagementSystem.Domain.Entities;
 using SchoolManagementSystem.API.Controllers;

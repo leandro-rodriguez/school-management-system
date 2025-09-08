@@ -2,14 +2,13 @@
 using SchoolManagementSystem.Domain.Services;
 using SchoolManagementSystem.Domain.Entities;
 using SchoolManagementSystem.Domain.Records;
-using SchoolManagementSystem.Application.Repositories_Interfaces.Records;
-using SchoolManagementSystem.Application.Repositories_Interfaces;
 using SchoolManagementSystem.Domain.Relations;
 using SchoolManagementSystem.Domain.Interfaces;
+using SchoolManagementSystem.Application.BusinessLogic.Repositories_Interfaces;
 // using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
-namespace SchoolManagementSystem.Application.Services_Implementations;
+namespace SchoolManagementSystem.Application.BusinessLogic.Services_Implementations;
 
 public class ConsultWorkerSalaryService : BaseRecordService<Worker>, IConsultWorkerSalaryService
 {

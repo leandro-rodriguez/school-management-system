@@ -1,0 +1,33 @@
+# Define the services (containers) that make up your application.
+services:
+  # Define the backend service.
+  backend:
+    # The name of the image to build.
+    image: school-management-backend
+    build:
+      # The build context is the current directory (where this file is).
+      context: .
+      # Explicitly name the Dockerfile to use.
+      dockerfile: Dockerfile
+    ports:
+      # Map port 5145 on your local machine to port 80 inside the container.
+      - "5145:80"
+
+  # Define the frontend service.
+  frontend:
+    image: school-management-frontend
+    build:
+      # The build context is the ClientApp directory.
+      context: ./src/SchoolManagementSystem.API/ClientApp
+      dockerfile: Dockerfile
+    ports:
+      # Map port 8080 on your local machine to port 3000 (the Express server's port) inside the container.
+      - "8080:8080"
+    environment:
+      # Pass an environment variable to the container.
+      # This tells the React app where to find the backend API.
+      # 'backend' is the service name defined above. Docker's internal DNS will resolve this.
+      - VITE_API_URL=http://backend
+    # This ensures that the backend service is started before the frontend service.
+    depends_on:
+      - backend

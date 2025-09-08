@@ -5,7 +5,7 @@
 
 ## **Execution**
 
-- In the root directory, run the command line `make dev`.
+- In the root directory, run the command line `docker-compose up --build`.
 
 ## **Technical report**
 

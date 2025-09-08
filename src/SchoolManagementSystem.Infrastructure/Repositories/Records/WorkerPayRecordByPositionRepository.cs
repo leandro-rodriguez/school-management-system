@@ -1,4 +1,3 @@
-using SchoolManagementSystem.Application.Repositories_Interfaces.Records;
 
 using Microsoft.EntityFrameworkCore;
 using SchoolManagementSystem.Domain.Entities;
@@ -8,6 +7,7 @@ using SchoolManagementSystem.Domain.Interfaces;
 using SchoolManagementSystem.Infrastructure.Data;
 using SchoolManagementSystem.Infrastructure.Configurations.Records;
 using SchoolManagementSystem.Infrastructure.Configurations.Relations;
+using SchoolManagementSystem.Application.BusinessLogic.Repositories_Interfaces;
 
 namespace SchoolManagementSystem.Infrastructure.Repositories.Records
 {

@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using SchoolManagementSystem.API.Dtos;
 using SchoolManagementSystem.API.Mappers;
-using SchoolManagementSystem.Application.Services_Implementations;
+using SchoolManagementSystem.Application.BusinessLogic.Services_Implementations;
 using SchoolManagementSystem.Domain.Entities;
 using SchoolManagementSystem.Domain.Services;
 using Microsoft.EntityFrameworkCore;

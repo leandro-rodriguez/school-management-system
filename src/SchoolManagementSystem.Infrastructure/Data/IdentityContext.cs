@@ -29,7 +29,7 @@ public class IdentityContext : IdentityDbContext<IdentityUser>
             Email = "admin@dclase.com",  
             NormalizedEmail = "ADMIN@DCLASE.COM",
             PhoneNumber = "53452234",
-            PasswordHash = "AQAAAAEAACcQAAAAED6EqU3WQKJxv+GJfszYJdHbsQSlqPzreV2lF4+6PVGJTtp2SslUfNnoL/mVCc//0A==",
+            PasswordHash = "AQAAAAEAACcQAAAAEKn9lFizCRqsvNtqVeUqX7Nrq3XZYVkDqCuX0iMHzzS/9YWVrG8EJ4SakwPEvHRl3w==",
             SecurityStamp = "QLJLDMNXCTJPGIQYC2Z4UNLIJQHAAUNP",
             ConcurrencyStamp = "a0cc035a-39f4-477b-98d7-28a137aef4f8",
             LockoutEnabled = true,  

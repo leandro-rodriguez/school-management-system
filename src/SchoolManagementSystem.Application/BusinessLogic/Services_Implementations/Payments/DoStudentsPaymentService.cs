@@ -4,12 +4,9 @@ using SchoolManagementSystem.Domain.Entities;
 using SchoolManagementSystem.Domain.Relations;
 using SchoolManagementSystem.Domain.Records;
 using SchoolManagementSystem.Domain.Interfaces;
-using SchoolManagementSystem.Application.Repositories_Interfaces.Records;
-using SchoolManagementSystem.Application.Repositories_Interfaces;
-// using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+using SchoolManagementSystem.Application.BusinessLogic.Repositories_Interfaces;
 
-namespace SchoolManagementSystem.Application.Services_Implementations;
+namespace SchoolManagementSystem.Application.BusinessLogic.Services_Implementations;
 
 public class DoStudentPaymentService : BaseService<Student>, IDoStudentPaymentService
 {
