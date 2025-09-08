@@ -1,7 +1,7 @@
 using SchoolManagementSystem.Domain.Records;
 using SchoolManagementSystem.Domain.Interfaces;
 using SchoolManagementSystem.Infrastructure.Data;
-using SchoolManagementSystem.Application.Repositories_Interfaces;
+using SchoolManagementSystem.Application.BusinessLogic.Repositories_Interfaces;
 
 namespace SchoolManagementSystem.Infrastructure.Repositories;
 

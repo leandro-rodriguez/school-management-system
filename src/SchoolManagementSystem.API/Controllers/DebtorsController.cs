@@ -5,7 +5,7 @@ using SchoolManagementSystem.API.Mappers;
 using SchoolManagementSystem.Domain.Entities;
 using SchoolManagementSystem.Domain.Services;
 using SchoolManagementSystem.Domain.Relations;
-using SchoolManagementSystem.Application.Repositories_Interfaces;
+using SchoolManagementSystem.Application.BusinessLogic.Repositories_Interfaces;
 using Microsoft.EntityFrameworkCore; 
 using AutoMapper;
 using System.Collections.Generic;

@@ -84,7 +84,7 @@ const NavBar = (props) => {
     };
 
     const getData = async () => 
-        await axios.get("https://localhost:5001/api/DebtorsNotification")
+        await axios.get("http://localhost:5145/api/DebtorsNotification")
             .then(resp=>{ 
                 setData([resp.data]);
             });
@@ -97,7 +97,7 @@ const NavBar = (props) => {
                     key: '0',
                 },
                 {
-                    label: <a href="https://localhost:44441/" onClick={() => localStorage.clear()}>Cerrar sesión</a>,
+                    label: <a href="http://localhost:8080/" onClick={() => localStorage.clear()}>Cerrar sesión</a>,
                     key: '1',
                 },
             ]}
@@ -140,7 +140,7 @@ const NavBar = (props) => {
     
     return (
         <nav>
-            <a href="https://localhost:44441/Home">
+            <a href="http://localhost:8080/Home">
                 <img
                     className="navb_left"
                     src={Logo}
@@ -198,7 +198,7 @@ const NavBar = (props) => {
             dataSource={data}
             renderItem={(item) => (
             <List.Item>
-                <a href="https://localhost:44441/Debtors">
+                <a href="http://localhost:8080/Debtors">
                 <Alert
                 message={item.title}
                 description={item.descrpition}

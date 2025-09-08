@@ -4,7 +4,7 @@ using SchoolManagementSystem.Domain.Services;
 using SchoolManagementSystem.Domain.Entities;
 
 
-namespace SchoolManagementSystem.Application.Services_Implementations;
+namespace SchoolManagementSystem.Application.BusinessLogic.Services_Implementations;
 
 
 
@@ -18,11 +18,10 @@ public class ActiveService<TEntity> : BaseService<TEntity>, IActiveService<TEnti
 
     public IQueryable<TEntity> QueryAll()
     {
-        var inac = BaseRepository.QueryInactives();
-        var act = BaseRepository.Query();
+        var inactiveEntities = BaseRepository.QueryInactives();
+        var activeEntities = BaseRepository.Query();
 
-        
-        return inac.Union(act);
+        return inactiveEntities.Union(activeEntities);
     }
 
     public IQueryable<TEntity> QueryInactives() => BaseRepository.QueryInactives();

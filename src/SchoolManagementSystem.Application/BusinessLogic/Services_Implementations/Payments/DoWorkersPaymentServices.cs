@@ -1,16 +1,15 @@
 
+using SchoolManagementSystem.Domain;
 using SchoolManagementSystem.Domain.Services;
 using SchoolManagementSystem.Domain.Entities;
 using SchoolManagementSystem.Domain.Relations;
 using SchoolManagementSystem.Domain.Records;
-using SchoolManagementSystem.Domain;
 using SchoolManagementSystem.Domain.Interfaces;
-using SchoolManagementSystem.Application.Repositories_Interfaces.Records;
-using SchoolManagementSystem.Application.Repositories_Interfaces;
+using SchoolManagementSystem.Application.BusinessLogic.Repositories_Interfaces;
 // using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
-namespace SchoolManagementSystem.Application.Services_Implementations;
+namespace SchoolManagementSystem.Application.BusinessLogic.Services_Implementations;
 
 public class DoWorkersPaymentService : BaseRecordService<Worker>, IDoWorkersPaymentService
 {

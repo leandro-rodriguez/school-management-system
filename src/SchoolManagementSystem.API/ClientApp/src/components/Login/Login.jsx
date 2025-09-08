@@ -15,7 +15,7 @@ const Login = () => {
 
     async function handleSubmit(){ 
     
-        var resp = await axios.post('https://localhost:5001/api/Authenticate/login', 
+        var resp = await axios.post('http://localhost:5145/api/Authenticate/login', 
             { "username": username, "password": password })
             .then(resp => { 
                     localStorage.setItem('token', JSON.stringify(resp.data));
@@ -48,7 +48,7 @@ const Login = () => {
                                 onChange={(e) => setPassword(e.target.value)}
                             />
                         </div>
-                        <a href="https://localhost:44441/Home" className="button login__submit"
+                        <a href="http://localhost:8080/Home" className="button login__submit"
                             onClick={handleSubmit()}>
                             <span className="button__text">Iniciar sesión</span>
                             <i className="button__icon"> <ArrowRightOutlined /></i>                            

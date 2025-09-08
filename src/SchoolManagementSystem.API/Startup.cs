@@ -2,8 +2,8 @@
 using Microsoft.EntityFrameworkCore;
 using SchoolManagementSystem.Domain.Entities;
 using SchoolManagementSystem.Domain.Services;
-using SchoolManagementSystem.Application.Services_Implementations;
-using SchoolManagementSystem.Application.Repositories_Interfaces;
+using SchoolManagementSystem.Application.BusinessLogic.Services_Implementations;
+using SchoolManagementSystem.Application.BusinessLogic.Repositories_Interfaces;
 using SchoolManagementSystem.Infrastructure.Data;
 using SchoolManagementSystem.Infrastructure.Repositories;
 using System.Text.Json.Serialization;
@@ -33,7 +33,7 @@ public class Startup
     {
         services.AddControllers();
         services.AddControllers().AddJsonOptions(x =>
-                x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
+            x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
 
         services.AddDbContext<SchoolContext>(options =>
             options.UseSqlite(Configuration.GetConnectionString("SchoolContextSQLite")));
@@ -84,15 +84,16 @@ public class Startup
         services.AddSingleton<PeriodicHostedService>();
         services.AddHostedService( provider => provider.GetRequiredService<PeriodicHostedService>());
 
+        // Define a specific CORS policy for the React app
         services.AddCors(options =>
         {
-            options.AddDefaultPolicy(
-                builder =>
-                {
-                    builder.AllowAnyHeader()
-                        .AllowAnyMethod()
-                        .AllowAnyOrigin();
-                });
+            options.AddPolicy(name: "MyAllowSpecificOrigins",
+                              policy  =>
+                              {
+                                  policy.WithOrigins("http://localhost:8080") // The origin of your React app
+                                        .AllowAnyHeader()
+                                        .AllowAnyMethod();
+                              });
         });
         
         services.AddEndpointsApiExplorer();
@@ -104,11 +105,6 @@ public class Startup
     
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
     {
-        app.UseCors(options =>
-            options.WithOrigins("https://localhost:44441")
-                .AllowAnyHeader()
-                .AllowAnyMethod());
-
         if (env.IsDevelopment())
         {
             app.UseDeveloperExceptionPage();
@@ -137,10 +133,14 @@ public class Startup
             
         }
 
-        app.UseHttpsRedirection();
+        //app.UseHttpsRedirection();
         app.UseStaticFiles();
 
         app.UseRouting();
+
+        // Use the CORS policy you defined in ConfigureServices.
+        // This must be placed after UseRouting and before UseAuthentication/UseAuthorization.
+        app.UseCors("MyAllowSpecificOrigins");
 
         app.UseAuthentication();
         app.UseAuthorization();
